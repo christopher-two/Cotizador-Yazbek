@@ -1,0 +1,506 @@
+{
+  "metadata": {
+    "marca": "Yazbek",
+    "fecha_lista": "Octubre 2025",
+    "moneda": "MXN",
+    "impuestos": "Precios incluyen 16% de IVA",
+    "condiciones": {
+      "menudeo": "1 a 11 piezas",
+      "mayoreo": "12 piezas o más"
+    },
+    "nota": "Precios extraídos del documento 'LISTA DE PRECIOS YAZBEK OCT 2025.pdf'"
+  },
+  "catalogo": [
+    {
+      "categoria": "Playeras",
+      "productos": [
+        {
+          "codigo": "C0200",
+          "descripcion": "Playera Cuello Redondo Manga Corta para Caballero",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 38.28, "precio_menudeo": 60.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 48.14, "precio_menudeo": 75.00 },
+            { "color": "Blanco", "talla": "EEEG", "precio_mayoreo": 60.32, "precio_menudeo": 94.50 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 44.08, "precio_menudeo": 60.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 55.10, "precio_menudeo": 75.00 },
+            { "color": "Colores", "talla": "EEEG", "precio_mayoreo": 69.02, "precio_menudeo": 94.50 }
+          ]
+        },
+        {
+          "codigo": "D0200",
+          "descripcion": "Playera Cuello Redondo Manga Corta para Dama",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 38.28, "precio_menudeo": 60.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 48.14, "precio_menudeo": 75.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 44.08, "precio_menudeo": 60.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 55.10, "precio_menudeo": 75.00 }
+          ]
+        },
+        {
+          "codigo": "C0250",
+          "descripcion": "Playera Cuello Redondo Manga Corta para Caballero (Jaspe/Neón)",
+          "precios": [
+            { "color": "Jaspe", "talla": "CH-EG", "precio_mayoreo": 46.40, "precio_menudeo": 60.00 },
+            { "color": "Jaspe", "talla": "EEG", "precio_mayoreo": 58.00, "precio_menudeo": 75.00 },
+            { "color": "Neón", "talla": "CH-EG", "precio_mayoreo": 51.04, "precio_menudeo": 65.00 },
+            { "color": "Neón", "talla": "EEG", "precio_mayoreo": 63.80, "precio_menudeo": 85.00 }
+          ]
+        },
+        {
+          "codigo": "D0250",
+          "descripcion": "Playera Cuello Redondo Manga Corta con Silueta para Dama (Jaspe/Neón)",
+          "precios": [
+            { "color": "Jaspe", "talla": "CH-EG", "precio_mayoreo": 46.40, "precio_menudeo": 60.00 },
+            { "color": "Neón", "talla": "CH-EG", "precio_mayoreo": 51.04, "precio_menudeo": 65.00 }
+          ]
+        },
+        {
+          "codigo": "C0300",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Corta para Caballero",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 44.08, "precio_menudeo": 65.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 55.10, "precio_menudeo": 85.00 },
+            { "color": "Blanco", "talla": "EEEG", "precio_mayoreo": 69.02, "precio_menudeo": 105.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 51.04, "precio_menudeo": 65.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 63.80, "precio_menudeo": 85.00 },
+            { "color": "Colores", "talla": "EEEG", "precio_mayoreo": 80.04, "precio_menudeo": 105.00 }
+          ]
+        },
+        {
+          "codigo": "D0300",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Corta con Silueta para Dama",
+          "precios": [
+            { "color": "Blanco", "talla": "ECH-EG", "precio_mayoreo": 44.08, "precio_menudeo": 65.00 },
+            { "color": "Colores", "talla": "ECH-EG", "precio_mayoreo": 51.04, "precio_menudeo": 65.00 }
+          ]
+        },
+        {
+          "codigo": "J0300",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Corta para Jóvenes",
+          "precios": [
+            { "color": "Blanco", "talla": "ECH-EG", "precio_mayoreo": 31.32, "precio_menudeo": 50.00 },
+            { "color": "Colores", "talla": "ECH-EG", "precio_mayoreo": 37.70, "precio_menudeo": 50.00 }
+          ]
+        },
+        {
+          "codigo": "N0300",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Corta para Niños",
+          "precios": [
+            { "color": "Blanco", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 27.26, "precio_menudeo": 40.00 },
+            { "color": "Colores", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 32.48, "precio_menudeo": 40.00 }
+          ]
+        },
+        {
+          "codigo": "B0300",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Corta para Bebés",
+          "precios": [
+            { "color": "Blanco", "talla": "1,2,3", "precio_mayoreo": 26.68, "precio_menudeo": 40.00 },
+            { "color": "Colores", "talla": "1,2,3", "precio_mayoreo": 31.90, "precio_menudeo": 40.00 }
+          ]
+        },
+        {
+          "codigo": "C0306",
+          "descripcion": "Playera Cuello V Manga Corta para Caballero",
+          "precios": [
+            { "color": "Blanco", "talla": "ECH-EG", "precio_mayoreo": 48.72, "precio_menudeo": 75.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 59.74, "precio_menudeo": 90.00 },
+            { "color": "Colores", "talla": "ECH-EG", "precio_mayoreo": 58.58, "precio_menudeo": 75.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 70.18, "precio_menudeo": 90.00 }
+          ]
+        },
+        {
+          "codigo": "D0306",
+          "descripcion": "Playera Cuello V Manga Corta con Silueta para Dama",
+          "precios": [
+            { "color": "Blanco", "talla": "ECH-EG", "precio_mayoreo": 48.72, "precio_menudeo": 75.00 },
+            { "color": "Colores", "talla": "ECH-EG", "precio_mayoreo": 58.58, "precio_menudeo": 75.00 }
+          ]
+        },
+        {
+          "codigo": "C0356",
+          "descripcion": "Playera Cuello V Manga Corta para Caballero (Todos)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 58.58, "precio_menudeo": 75.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 70.18, "precio_menudeo": 90.00 }
+          ]
+        },
+        {
+          "codigo": "D0356",
+          "descripcion": "Playera Cuello V Manga Corta con Silueta para Dama (Todos)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 58.58, "precio_menudeo": 75.00 }
+          ]
+        },
+        {
+          "codigo": "C0304",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Larga para Caballero",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 62.06, "precio_menudeo": 100.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 74.24, "precio_menudeo": 120.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 77.72, "precio_menudeo": 100.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 93.38, "precio_menudeo": 120.00 }
+          ]
+        },
+        {
+          "codigo": "D0304",
+          "descripcion": "Playera Cuello Redondo Manga Larga con Silueta para Dama",
+          "precios": [
+            { "color": "Blanco", "talla": "ECH-EG", "precio_mayoreo": 62.06, "precio_menudeo": 100.00 },
+            { "color": "Colores", "talla": "ECH-EG", "precio_mayoreo": 77.72, "precio_menudeo": 100.00 }
+          ]
+        },
+        {
+          "codigo": "N0304",
+          "descripcion": "Playera Peso Completo Cuello Redondo Manga Larga para Niños",
+          "precios": [
+            { "color": "Blanco", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 47.56, "precio_menudeo": 74.00 },
+            { "color": "Colores", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 56.84, "precio_menudeo": 74.00 }
+          ]
+        },
+        {
+          "codigo": "C0354",
+          "descripcion": "Playera Cuello Redondo Manga Larga para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 77.72, "precio_menudeo": 100.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 93.38, "precio_menudeo": 120.00 }
+          ]
+        },
+        {
+          "codigo": "C0310",
+          "descripcion": "Playera Peso Completo Cuello Redondo sin Mangas para Caballero",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 44.08, "precio_menudeo": 65.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 55.10, "precio_menudeo": 85.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 51.04, "precio_menudeo": 65.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 63.80, "precio_menudeo": 85.00 }
+          ]
+        },
+        {
+          "codigo": "C1300",
+          "descripcion": "Playera Cuello Redondo Manga Corta para Caballero (SubliTee)",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 69.02, "precio_menudeo": 90.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 86.42, "precio_menudeo": 110.00 }
+          ]
+        },
+        {
+          "codigo": "D1300",
+          "descripcion": "Playera Cuello Redondo Manga Corta con Silueta para Dama (SubliTee)",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 69.02, "precio_menudeo": 90.00 }
+          ]
+        },
+        {
+          "codigo": "C1302",
+          "descripcion": "Playera Cuello Redondo Manga Corta para Caballero (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 75.40, "precio_menudeo": 100.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 94.54, "precio_menudeo": 125.00 }
+          ]
+        },
+        {
+          "codigo": "D1302",
+          "descripcion": "Playera Cuello Redondo Manga Corta con Silueta para Dama (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 75.40, "precio_menudeo": 100.00 }
+          ]
+        },
+        {
+          "codigo": "N1302",
+          "descripcion": "Playera Cuello Redondo Manga Corta para Niños (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 52.78, "precio_menudeo": 70.00 }
+          ]
+        },
+        {
+          "codigo": "C1304",
+          "descripcion": "Playera Cuello Redondo Manga Larga para Caballero (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 92.22, "precio_menudeo": 120.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 114.84, "precio_menudeo": 150.00 }
+          ]
+        },
+        {
+          "codigo": "D1304",
+          "descripcion": "Playera Cuello Redondo Manga Larga con Silueta para Dama (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 92.22, "precio_menudeo": 120.00 }
+          ]
+        }
+      ]
+    },
+    {
+      "categoria": "Sudaderas",
+      "productos": [
+        {
+          "codigo": "C0700",
+          "descripcion": "Sudadera Cuello Redondo para Adultos",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 111.94, "precio_menudeo": 185.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 139.78, "precio_menudeo": 230.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 134.56, "precio_menudeo": 185.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 168.20, "precio_menudeo": 230.00 }
+          ]
+        },
+        {
+          "codigo": "C0701",
+          "descripcion": "Sudadera con Capucha y Cangurera para Adultos",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 156.60, "precio_menudeo": 255.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 196.04, "precio_menudeo": 320.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 187.92, "precio_menudeo": 255.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 234.90, "precio_menudeo": 320.00 }
+          ]
+        },
+        {
+          "codigo": "C0702",
+          "descripcion": "Sudadera con Capucha, Cangurera y Cierre para Adultos",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 180.38, "precio_menudeo": 295.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 225.62, "precio_menudeo": 370.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 216.34, "precio_menudeo": 295.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 270.28, "precio_menudeo": 370.00 }
+          ]
+        },
+        {
+          "codigo": "C0703",
+          "descripcion": "Sudadera 1/4 de Cierre para Adultos",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 134.56, "precio_menudeo": 170.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 168.20, "precio_menudeo": 210.00 }
+          ]
+        },
+        {
+          "codigo": "J0700",
+          "descripcion": "Sudadera Cuello Redondo para Jóvenes",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 92.22, "precio_menudeo": 150.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 110.78, "precio_menudeo": 150.00 }
+          ]
+        },
+        {
+          "codigo": "J0701",
+          "descripcion": "Sudadera con Capucha y Cangurera para Jóvenes",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 120.06, "precio_menudeo": 195.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 143.84, "precio_menudeo": 195.00 }
+          ]
+        },
+        {
+          "codigo": "J0702",
+          "descripcion": "Sudadera con Capucha, Cangurera y Cierre para Jóvenes",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 138.04, "precio_menudeo": 225.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 165.88, "precio_menudeo": 225.00 }
+          ]
+        },
+        {
+          "codigo": "N0700",
+          "descripcion": "Sudadera Cuello Redondo para Niños",
+          "precios": [
+            { "color": "Blanco", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 92.22, "precio_menudeo": 150.00 },
+            { "color": "Colores", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 110.78, "precio_menudeo": 150.00 }
+          ]
+        },
+        {
+          "codigo": "N0701",
+          "descripcion": "Sudadera con Capucha y Cangurera para Niños",
+          "precios": [
+            { "color": "Blanco", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 120.06, "precio_menudeo": 195.00 },
+            { "color": "Colores", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 143.84, "precio_menudeo": 195.00 }
+          ]
+        }
+      ]
+    },
+    {
+      "categoria": "Playeras Tipo Polo",
+      "productos": [
+        {
+          "codigo": "C0501",
+          "descripcion": "Playera Tipo Polo Manga Corta para Caballero (Jersey)",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 67.28, "precio_menudeo": 105.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 80.62, "precio_menudeo": 125.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 81.78, "precio_menudeo": 105.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 98.02, "precio_menudeo": 125.00 }
+          ]
+        },
+        {
+          "codigo": "N0501",
+          "descripcion": "Playera Tipo Polo Manga Corta para Niños",
+          "precios": [
+            { "color": "Blanco", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 55.10, "precio_menudeo": 89.50 },
+            { "color": "Colores", "talla": "CH(4A)-EG(14A)", "precio_mayoreo": 69.02, "precio_menudeo": 89.50 }
+          ]
+        },
+        {
+          "codigo": "C0550",
+          "descripcion": "Playera Tipo Polo Piqué Manga Corta para Caballero",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 92.22, "precio_menudeo": 140.00 },
+            { "color": "Blanco", "talla": "EEG", "precio_mayoreo": 115.42, "precio_menudeo": 175.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 108.46, "precio_menudeo": 140.00 },
+            { "color": "Colores", "talla": "EEG", "precio_mayoreo": 135.72, "precio_menudeo": 175.00 }
+          ]
+        },
+        {
+          "codigo": "D0550",
+          "descripcion": "Playera Tipo Polo Piqué Manga Corta con Silueta para Dama",
+          "precios": [
+            { "color": "Blanco", "talla": "CH-EG", "precio_mayoreo": 92.22, "precio_menudeo": 140.00 },
+            { "color": "Colores", "talla": "CH-EG", "precio_mayoreo": 108.46, "precio_menudeo": 140.00 }
+          ]
+        },
+        {
+          "codigo": "C1502",
+          "descripcion": "Playera Tipo Polo Manga Corta para Caballero (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 126.44, "precio_menudeo": 160.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 158.34, "precio_menudeo": 199.00 }
+          ]
+        },
+        {
+          "codigo": "D1502",
+          "descripcion": "Playera Tipo Polo Manga Corta con Silueta para Dama (ActiviTee)",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 126.44, "precio_menudeo": 160.00 }
+          ]
+        }
+      ]
+    },
+    {
+      "categoria": "Camisas",
+      "productos": [
+        {
+          "codigo": "C0600",
+          "descripcion": "Camisa de Mezclilla Manga Corta para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 226.20, "precio_menudeo": 270.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 248.82, "precio_menudeo": 300.00 }
+          ]
+        },
+        {
+          "codigo": "D0600",
+          "descripcion": "Camisa de Mezclilla Manga Corta con Silueta para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 226.20, "precio_menudeo": 270.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 248.82, "precio_menudeo": 300.00 }
+          ]
+        },
+        {
+          "codigo": "C0601",
+          "descripcion": "Camisa de Mezclilla Manga Larga para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 284.78, "precio_menudeo": 340.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 313.20, "precio_menudeo": 375.00 }
+          ]
+        },
+        {
+          "codigo": "D0601",
+          "descripcion": "Camisa de Mezclilla Manga Larga con Silueta para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 284.78, "precio_menudeo": 340.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 313.20, "precio_menudeo": 375.00 }
+          ]
+        },
+        {
+          "codigo": "C0604",
+          "descripcion": "Camisa Oxford Manga Corta para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 174.00, "precio_menudeo": 210.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 191.40, "precio_menudeo": 230.00 }
+          ]
+        },
+        {
+          "codigo": "D0604",
+          "descripcion": "Camisa Oxford Manga Corta con Silueta para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 174.00, "precio_menudeo": 210.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 191.40, "precio_menudeo": 230.00 }
+          ]
+        },
+        {
+          "codigo": "C0605",
+          "descripcion": "Camisa Oxford Manga Larga para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 208.80, "precio_menudeo": 250.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 229.68, "precio_menudeo": 275.00 }
+          ]
+        },
+        {
+          "codigo": "D0605",
+          "descripcion": "Camisa Oxford Manga Larga con Silueta para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 208.80, "precio_menudeo": 250.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 229.68, "precio_menudeo": 275.00 }
+          ]
+        },
+        {
+          "codigo": "C0606",
+          "descripcion": "Camisa de Gabardina Manga Corta para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 208.80, "precio_menudeo": 250.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 229.68, "precio_menudeo": 275.00 }
+          ]
+        },
+        {
+          "codigo": "D0606",
+          "descripcion": "Camisa de Gabardina Manga Corta con Silueta para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 208.80, "precio_menudeo": 250.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 229.68, "precio_menudeo": 275.00 }
+          ]
+        },
+        {
+          "codigo": "C0607",
+          "descripcion": "Camisa de Gabardina Manga Larga para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 250.56, "precio_menudeo": 300.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 275.50, "precio_menudeo": 330.00 }
+          ]
+        },
+        {
+          "codigo": "D0607",
+          "descripcion": "Camisa de Gabardina Manga Larga con Silueta para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "CH-EG", "precio_mayoreo": 250.56, "precio_menudeo": 300.00 },
+            { "color": "Todos", "talla": "EEG", "precio_mayoreo": 275.50, "precio_menudeo": 330.00 }
+          ]
+        }
+      ]
+    },
+    {
+      "categoria": "Pantalones",
+      "productos": [
+        {
+          "codigo": "C0651",
+          "descripcion": "Pantalón de Mezclilla para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "28-40", "precio_mayoreo": 234.90, "precio_menudeo": 280.00 }
+          ]
+        },
+        {
+          "codigo": "D0651",
+          "descripcion": "Pantalón de Mezclilla para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "5-17", "precio_mayoreo": 234.90, "precio_menudeo": 280.00 }
+          ]
+        },
+        {
+          "codigo": "C0652",
+          "descripcion": "Pantalón de Gabardina para Caballero",
+          "precios": [
+            { "color": "Todos", "talla": "28-40", "precio_mayoreo": 281.88, "precio_menudeo": 340.00 }
+          ]
+        },
+        {
+          "codigo": "D0652",
+          "descripcion": "Pantalón de Gabardina para Dama",
+          "precios": [
+            { "color": "Todos", "talla": "5-17", "precio_mayoreo": 281.88, "precio_menudeo": 340.00 }
+          ]
+        }
+      ]
+    }
+  ]
+}
