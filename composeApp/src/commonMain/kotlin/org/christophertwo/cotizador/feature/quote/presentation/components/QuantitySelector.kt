@@ -4,14 +4,12 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Remove
-import androidx.compose.material3.FilledIconButton
-import androidx.compose.material3.Icon
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import org.christophertwo.cotizador.core.common.SizeContent
 
 @Composable
 fun QuantitySelector(
@@ -19,37 +17,52 @@ fun QuantitySelector(
     onQuantityChange: (Int) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
-        Text(
-            text = "Cantidad de Productos",
-            style = MaterialTheme.typography.titleMedium,
-            modifier = Modifier.padding(bottom = 8.dp)
+    Card(
+        modifier = modifier.widthIn(
+            min = SizeContent.MIN.width.dp,
+            max = SizeContent.MAX.width.dp
+        ),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerLowest
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp
         )
-
-        Row(
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth()
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            FilledIconButton(
-                onClick = { onQuantityChange(-1) },
-                enabled = quantity > 1
-            ) {
-                Icon(Icons.Default.Remove, contentDescription = "Disminuir cantidad")
-            }
-
             Text(
-                text = quantity.toString(),
-                style = MaterialTheme.typography.headlineMedium,
-                modifier = Modifier.weight(1f)
+                text = "Cantidad de Productos",
+                style = MaterialTheme.typography.titleMedium,
+                modifier = Modifier.padding(bottom = 8.dp)
             )
 
-            FilledIconButton(
-                onClick = { onQuantityChange(1) }
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Icon(Icons.Default.Add, contentDescription = "Aumentar cantidad")
+                FilledIconButton(
+                    onClick = { onQuantityChange(-1) },
+                    enabled = quantity > 1,
+                ) {
+                    Icon(Icons.Default.Remove, contentDescription = "Disminuir cantidad")
+                }
+
+                Text(
+                    text = quantity.toString(),
+                    style = MaterialTheme.typography.headlineMedium,
+                )
+
+                FilledIconButton(
+                    onClick = { onQuantityChange(1) },
+                ) {
+                    Icon(Icons.Default.Add, contentDescription = "Aumentar cantidad")
+                }
             }
         }
     }
 }
-

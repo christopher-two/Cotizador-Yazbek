@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import org.christophertwo.cotizador.core.common.SizeContent
 import org.christophertwo.cotizador.feature.quote.domain.PrintConfig
 
 @Composable
@@ -21,48 +22,65 @@ fun PrintConfigSection(
     onUpdatePrice: (Int, Double) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
-        Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
-            verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.fillMaxWidth()
+    Card(
+        modifier = modifier.widthIn(
+            min = SizeContent.MIN.width.dp,
+            max = SizeContent.MAX.width.dp
+        ),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceContainerLowest
+        ),
+        elevation = CardDefaults.cardElevation(
+            defaultElevation = 4.dp
+        )
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text(
-                text = "Impresiones (0-4)",
-                style = MaterialTheme.typography.titleMedium
-            )
-
-            FilledTonalButton(
-                onClick = onAddPrint,
-                enabled = printConfigs.size < 4
+            Row(
+                horizontalArrangement = Arrangement.SpaceBetween,
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.fillMaxWidth()
             ) {
-                Icon(
-                    Icons.Default.Add,
-                    contentDescription = "Agregar impresión",
-                    modifier = Modifier.size(18.dp)
+                Text(
+                    text = "Impresiones",
+                    style = MaterialTheme.typography.titleMedium
                 )
-                Spacer(Modifier.width(4.dp))
-                Text("Agregar")
+
+                FilledTonalButton(
+                    onClick = onAddPrint,
+                    enabled = printConfigs.size < 10
+                ) {
+                    Icon(
+                        Icons.Default.Add,
+                        contentDescription = "Agregar impresión",
+                        modifier = Modifier.size(18.dp)
+                    )
+                    Spacer(Modifier.width(4.dp))
+                    Text("Agregar")
+                }
             }
-        }
 
-        if (printConfigs.isEmpty()) {
-            Text(
-                text = "Sin impresiones agregadas",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-                modifier = Modifier.padding(vertical = 16.dp)
-            )
-        } else {
-            Spacer(Modifier.height(8.dp))
-
-            printConfigs.forEach { config ->
-                PrintConfigItem(
-                    config = config,
-                    onRemove = { onRemovePrint(config.position) },
-                    onPriceChange = { newPrice -> onUpdatePrice(config.position, newPrice) },
-                    modifier = Modifier.padding(bottom = 8.dp)
+            if (printConfigs.isEmpty()) {
+                Text(
+                    text = "Sin impresiones agregadas",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(vertical = 16.dp)
                 )
+            } else {
+                Spacer(Modifier.height(8.dp))
+
+                printConfigs.forEach { config ->
+                    PrintConfigItem(
+                        config = config,
+                        onRemove = { onRemovePrint(config.position) },
+                        onPriceChange = { newPrice -> onUpdatePrice(config.position, newPrice) },
+                        modifier = Modifier.padding(bottom = 8.dp)
+                    )
+                }
             }
         }
     }

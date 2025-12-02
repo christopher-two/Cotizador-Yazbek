@@ -7,13 +7,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.christophertwo.cotizador.core.common.SizeContent
-import org.christophertwo.cotizador.feature.quote.domain.SaleType
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun SaleTypeSelector(
-    selectedType: SaleType,
-    onTypeSelected: (SaleType) -> Unit,
+fun SizeButtonGroup(
+    availableSizes: List<String>,
+    selectedSize: String?,
+    onSizeSelected: (String) -> Unit,
+    enabled: Boolean = true,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -34,30 +35,36 @@ fun SaleTypeSelector(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Tipo de Venta",
+                text = "Talla del Producto",
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
+            if (!enabled) {
+                Text(
+                    text = "Selecciona un color primero",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(bottom = 8.dp)
+                )
+            }
+
             SingleChoiceSegmentedButtonRow(
                 modifier = Modifier.fillMaxWidth()
             ) {
-                SegmentedButton(
-                    selected = selectedType == SaleType.MAYOREO,
-                    onClick = { onTypeSelected(SaleType.MAYOREO) },
-                    shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2)
-                ) {
-                    Text("Mayoreo")
-                }
-                SegmentedButton(
-                    selected = selectedType == SaleType.MENUDEO,
-                    onClick = { onTypeSelected(SaleType.MENUDEO) },
-                    shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2)
-                ) {
-                    Text("Menudeo")
+                availableSizes.forEach { size ->
+                    SegmentedButton(
+                        selected = selectedSize == size,
+                        onClick = { onSizeSelected(size) },
+                        label = { Text(size) },
+                        enabled = enabled,
+                        shape = SegmentedButtonDefaults.itemShape(
+                            index = availableSizes.indexOf(size),
+                            count = availableSizes.size
+                        ),
+                    )
                 }
             }
         }
     }
 }
-

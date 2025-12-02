@@ -7,13 +7,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import org.christophertwo.cotizador.core.common.SizeContent
-import org.christophertwo.cotizador.feature.quote.domain.SaleType
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalLayoutApi::class)
 @Composable
-fun SaleTypeSelector(
-    selectedType: SaleType,
-    onTypeSelected: (SaleType) -> Unit,
+fun ColorButtonGroup(
+    availableColors: List<String>,
+    selectedColor: String?,
+    onColorSelected: (String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Card(
@@ -34,7 +34,7 @@ fun SaleTypeSelector(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = "Tipo de Venta",
+                text = "Color del Producto",
                 style = MaterialTheme.typography.titleMedium,
                 modifier = Modifier.padding(bottom = 8.dp)
             )
@@ -42,19 +42,16 @@ fun SaleTypeSelector(
             SingleChoiceSegmentedButtonRow(
                 modifier = Modifier.fillMaxWidth()
             ) {
-                SegmentedButton(
-                    selected = selectedType == SaleType.MAYOREO,
-                    onClick = { onTypeSelected(SaleType.MAYOREO) },
-                    shape = SegmentedButtonDefaults.itemShape(index = 0, count = 2)
-                ) {
-                    Text("Mayoreo")
-                }
-                SegmentedButton(
-                    selected = selectedType == SaleType.MENUDEO,
-                    onClick = { onTypeSelected(SaleType.MENUDEO) },
-                    shape = SegmentedButtonDefaults.itemShape(index = 1, count = 2)
-                ) {
-                    Text("Menudeo")
+                availableColors.forEach { color ->
+                    SegmentedButton(
+                        selected = selectedColor == color,
+                        onClick = { onColorSelected(color) },
+                        shape = SegmentedButtonDefaults.itemShape(
+                            index = availableColors.indexOf(color),
+                            count = availableColors.size
+                        ),
+                        label = { Text(color) }
+                    )
                 }
             }
         }

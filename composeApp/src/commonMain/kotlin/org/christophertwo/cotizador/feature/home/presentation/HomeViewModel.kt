@@ -6,6 +6,7 @@ import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import org.christophertwo.cotizador.data.Product
 import org.christophertwo.cotizador.data.YazbekService
+import org.christophertwo.cotizador.feature.home.domain.ProductAttributeExtractor
 
 class HomeViewModel : ViewModel() {
 
@@ -38,14 +39,31 @@ class HomeViewModel : ViewModel() {
                     category.productos
                 }
 
+                // Extraer categorías disponibles
+                val categories = yazbekData.catalogo.map { it.categoria }
+
+                // Extraer atributos disponibles de todos los productos
+                val neckTypes = ProductAttributeExtractor.getAvailableValues(allProducts, "cuello")
+                val sleeveTypes = ProductAttributeExtractor.getAvailableValues(allProducts, "manga")
+                val genders = ProductAttributeExtractor.getAvailableValues(allProducts, "genero")
+                val characteristics = ProductAttributeExtractor.getAvailableValues(allProducts, "caracteristica")
+
                 _state.update {
                     it.copy(
                         isLoading = false,
                         yazbekData = yazbekData,
                         allProducts = allProducts,
-                        filteredProducts = allProducts
+                        filteredProducts = allProducts,
+                        availableCategories = categories,
+                        availableNeckTypes = neckTypes,
+                        availableSleeveTypes = sleeveTypes,
+                        availableGenders = genders,
+                        availableCharacteristics = characteristics
                     )
                 }
+
+                // Cargar la primera página automáticamente
+                loadPage(0, allProducts)
             } catch (e: Exception) {
                 _state.update {
                     it.copy(
@@ -60,27 +78,8 @@ class HomeViewModel : ViewModel() {
     fun onAction(action: HomeAction) {
         when (action) {
             is HomeAction.UpdateSearchQuery -> {
-                val newQuery = action.query
-                val filtered = if (newQuery.isEmpty()) {
-                    _state.value.allProducts
-                } else {
-                    // Dividir la búsqueda en palabras individuales
-                    val searchWords = newQuery.trim().split(Regex("\\s+"))
-                        .filter { it.isNotEmpty() }
-
-                    _state.value.allProducts.filter { product ->
-                        // El producto coincide si TODAS las palabras de búsqueda
-                        // están en el código O en la descripción
-                        searchWords.all { word ->
-                            product.codigo.contains(word, ignoreCase = true) ||
-                            product.descripcion.contains(word, ignoreCase = true)
-                        }
-                    }
-                }
-                _state.update { it.copy(searchQuery = newQuery, filteredProducts = filtered) }
-
-                // Resetear paginación y cargar primera página con los resultados filtrados
-                loadPage(0, filtered)
+                _state.update { it.copy(searchQuery = action.query) }
+                applyFilters()
             }
 
             HomeAction.PerformSearch -> {
@@ -93,7 +92,124 @@ class HomeViewModel : ViewModel() {
                 val nextPage = _state.value.currentPage + 1
                 loadPage(nextPage, _state.value.filteredProducts)
             }
+
+            HomeAction.ToggleFilterDialog -> {
+                _state.update { it.copy(isFilterDialogOpen = !it.isFilterDialogOpen) }
+            }
+
+            is HomeAction.SelectCategory -> {
+                _state.update { it.copy(selectedCategory = action.category) }
+                applyFilters()
+            }
+
+            is HomeAction.SetPriceRange -> {
+                _state.update {
+                    it.copy(
+                        minPriceFilter = action.min,
+                        maxPriceFilter = action.max
+                    )
+                }
+                applyFilters()
+            }
+
+            HomeAction.ClearFilters -> {
+                _state.update {
+                    it.copy(
+                        selectedCategory = null,
+                        minPriceFilter = null,
+                        maxPriceFilter = null,
+                        searchQuery = ""
+                    )
+                }
+                applyFilters()
+            }
+
+            else -> {}
         }
+    }
+
+    private fun applyFilters() {
+        val currentState = _state.value
+        val searchQuery = currentState.searchQuery
+        val selectedCategory = currentState.selectedCategory
+        val minPrice = currentState.minPriceFilter
+        val maxPrice = currentState.maxPriceFilter
+        val selectedNeckType = currentState.selectedNeckType
+        val selectedSleeveType = currentState.selectedSleeveType
+        val selectedGender = currentState.selectedGender
+        val selectedCharacteristic = currentState.selectedCharacteristic
+
+        var filtered = currentState.allProducts
+
+        // Filtrar por búsqueda
+        if (searchQuery.isNotEmpty()) {
+            val searchWords = searchQuery.trim().split(Regex("\\s+"))
+                .filter { it.isNotEmpty() }
+
+            filtered = filtered.filter { product ->
+                searchWords.all { word ->
+                    product.codigo.contains(word, ignoreCase = true) ||
+                    product.descripcion.contains(word, ignoreCase = true)
+                }
+            }
+        }
+
+        // Filtrar por categoría
+        if (selectedCategory != null) {
+            val categoryProducts = currentState.yazbekData?.catalogo
+                ?.find { it.categoria == selectedCategory }
+                ?.productos ?: emptyList()
+
+            filtered = filtered.filter { product ->
+                categoryProducts.any { it.codigo == product.codigo }
+            }
+        }
+
+        // Filtrar por atributos de descripción
+        if (selectedNeckType != null) {
+            filtered = filtered.filter { product ->
+                ProductAttributeExtractor.extractAttributes(product.descripcion)
+                    .any { it.key == "cuello" && it.value == selectedNeckType }
+            }
+        }
+
+        if (selectedSleeveType != null) {
+            filtered = filtered.filter { product ->
+                ProductAttributeExtractor.extractAttributes(product.descripcion)
+                    .any { it.key == "manga" && it.value == selectedSleeveType }
+            }
+        }
+
+        if (selectedGender != null) {
+            filtered = filtered.filter { product ->
+                ProductAttributeExtractor.extractAttributes(product.descripcion)
+                    .any { it.key == "genero" && it.value == selectedGender }
+            }
+        }
+
+        if (selectedCharacteristic != null) {
+            filtered = filtered.filter { product ->
+                ProductAttributeExtractor.extractAttributes(product.descripcion)
+                    .any { it.key == "caracteristica" && it.value == selectedCharacteristic }
+            }
+        }
+
+        // Filtrar por rango de precio
+        if (minPrice != null || maxPrice != null) {
+            filtered = filtered.filter { product ->
+                val productMinPrice = product.precios.minOfOrNull {
+                    minOf(it.precioMayoreo, it.precioMenudeo)
+                } ?: 0.0
+
+                val matchesMin = minPrice == null || productMinPrice >= minPrice
+                val matchesMax = maxPrice == null || productMinPrice <= maxPrice
+
+                matchesMin && matchesMax
+            }
+        }
+
+        _state.update { it.copy(filteredProducts = filtered) }
+        loadPage(0, filtered)
     }
 
     private fun loadPage(page: Int, sourceProducts: List<Product>) {

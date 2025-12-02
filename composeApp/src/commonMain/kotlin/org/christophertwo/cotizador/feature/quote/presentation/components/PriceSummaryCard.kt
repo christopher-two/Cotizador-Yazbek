@@ -2,15 +2,13 @@ package org.christophertwo.cotizador.feature.quote.presentation.components
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ExpandLess
-import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import org.christophertwo.cotizador.core.common.SizeContent
 import org.christophertwo.cotizador.core.util.formatDecimals
 import org.christophertwo.cotizador.feature.quote.domain.PriceBreakdown
 
@@ -22,19 +20,25 @@ fun PriceSummaryCard(
     var isExpanded by remember { mutableStateOf(true) }
 
     Card(
-        modifier = modifier.fillMaxWidth(),
+        modifier = modifier.widthIn(
+            min = SizeContent.MIN.width.dp,
+            max = SizeContent.MAX.width.dp
+        ),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.primaryContainer
         ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        onClick = { isExpanded = !isExpanded }
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             // Header
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp),
+                horizontalAlignment = Alignment.Start,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
@@ -42,11 +46,23 @@ fun PriceSummaryCard(
                     style = MaterialTheme.typography.titleLarge,
                     fontWeight = FontWeight.Bold
                 )
-
-                IconButton(onClick = { isExpanded = !isExpanded }) {
-                    Icon(
-                        imageVector = if (isExpanded) Icons.Default.ExpandLess else Icons.Default.ExpandMore,
-                        contentDescription = if (isExpanded) "Contraer" else "Expandir"
+                // Total final
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier.fillMaxWidth()
+                ) {
+                    Text(
+                        text = "TOTAL",
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.onPrimaryContainer
+                    )
+                    Text(
+                        text = "$${breakdown?.totalFinal?.formatDecimals() ?: "0"}",
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontWeight = FontWeight.Bold,
+                        color = MaterialTheme.colorScheme.primary
                     )
                 }
             }
@@ -59,12 +75,15 @@ fun PriceSummaryCard(
                     color = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             } else {
-                AnimatedVisibility(visible = isExpanded) {
+                AnimatedVisibility(visible = !isExpanded) {
                     Column(
                         modifier = Modifier.padding(top = 12.dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
-                        Divider()
+                        HorizontalDivider(
+                            thickness = 2.dp,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
 
                         // Base price
                         PriceDetailRow(
@@ -82,7 +101,10 @@ fun PriceSummaryCard(
                             )
                         }
 
-                        Divider()
+                        HorizontalDivider(
+                            thickness = 2.dp,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
 
                         // Subtotal without profit
                         PriceDetailRow(
@@ -101,7 +123,10 @@ fun PriceSummaryCard(
                             )
                         }
 
-                        Divider()
+                        HorizontalDivider(
+                            thickness = 2.dp,
+                            color = MaterialTheme.colorScheme.onPrimaryContainer
+                        )
 
                         // Final price per unit
                         PriceDetailRow(
@@ -115,31 +140,6 @@ fun PriceSummaryCard(
                             label = "Cantidad",
                             value = "${breakdown.quantity} piezas"
                         )
-
-                        HorizontalDivider(
-                            thickness = 2.dp,
-                            color = MaterialTheme.colorScheme.onPrimaryContainer
-                        )
-
-                        // Total final
-                        Row(
-                            horizontalArrangement = Arrangement.SpaceBetween,
-                            verticalAlignment = Alignment.CenterVertically,
-                            modifier = Modifier.fillMaxWidth()
-                        ) {
-                            Text(
-                                text = "TOTAL",
-                                style = MaterialTheme.typography.headlineSmall,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.onPrimaryContainer
-                            )
-                            Text(
-                                text = "$${breakdown.totalFinal.formatDecimals()}",
-                                style = MaterialTheme.typography.headlineSmall,
-                                fontWeight = FontWeight.Bold,
-                                color = MaterialTheme.colorScheme.primary
-                            )
-                        }
                     }
                 }
             }
